@@ -1,6 +1,6 @@
 ﻿﻿using UnityEngine;
 
-namespace Terrain {
+ namespace Runtime.Terrain {
     public static class HeightmapGenerator {
 
         public static float[, ] GenerateHeightmap (NoiseSettings noiseSettings, int size, bool normalize = true) {

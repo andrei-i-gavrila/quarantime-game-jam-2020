@@ -40,10 +40,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1624452864871424306}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d75d24f3e9c9a3244b90d525a03c6c91, type: 3}
+  m_Script: {fileID: 11500000, guid: c0cc3552bdf68754eb8e2706a2d36550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoUpdate: 0
+  autoUpdate: 1
   centralize: 1
   worldSize: 20
   terrainNoise:
@@ -53,41 +53,5 @@ MonoBehaviour:
     lacunarity: 2
     scale: 1
     offset: {x: 0, y: 0}
-  mat: {fileID: 2100000, guid: e6d93d9e45fbd4c46b82aa5c34f7f844, type: 2}
-  biomes:
-  - height: 0.2
-    startDepth: 0
-    endDepth: 0
-    startColor: {r: 0.16613182, g: 0.15886435, b: 0.6603774, a: 0}
-    endColor: {r: 0.18841223, g: 0.4791958, b: 0.5471698, a: 0}
-    numSteps: 3
-  - height: 0.4
-    startDepth: 0
-    endDepth: 0
-    startColor: {r: 0.8207547, g: 0.60474217, b: 0.40650585, a: 0}
-    endColor: {r: 0.9245283, g: 0.75116384, b: 0.58873266, a: 0}
-    numSteps: 2
-  - height: 0.5
-    startDepth: 0
-    endDepth: 0
-    startColor: {r: 0.15490389, g: 0.5566038, b: 0.29980427, a: 0}
-    endColor: {r: 0, g: 0.16037738, b: 0.039431393, a: 0}
-    numSteps: 2
-  - height: 0.7
-    startDepth: 0
-    endDepth: 0
-    startColor: {r: 0.05278144, g: 0.3584906, b: 0.045656823, a: 0}
-    endColor: {r: 0, g: 0.2830189, b: 0.0062157754, a: 0}
-    numSteps: 2
-  - height: 0.9
-    startDepth: 0
-    endDepth: 0
-    startColor: {r: 0.4716981, g: 0.28163838, b: 0.10012461, a: 0}
-    endColor: {r: 0.38679248, g: 0.2700969, b: 0.22076362, a: 0}
-    numSteps: 2
-  - height: 1
-    startDepth: 0
-    endDepth: 0
-    startColor: {r: 0.46226418, g: 0.46226418, b: 0.46226418, a: 0}
-    endColor: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 0}
-    numSteps: 2
+  mat: {fileID: 0}
+  biomes: []

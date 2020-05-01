@@ -1,11 +1,10 @@
-﻿﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Runtime.Map;
 using UnityEditor;
 using UnityEngine;
 
-namespace Terrain {
+namespace Runtime.Terrain.Editor {
     [CustomEditor (typeof (TerrainGenerator))]
-    public class TerrainGeneratorEditor : Editor {
+    public class TerrainGeneratorEditor : UnityEditor.Editor {
         TerrainGenerator terrainGen;
 
         public override void OnInspectorGUI () {

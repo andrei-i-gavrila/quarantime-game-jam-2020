@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Thysia
+namespace Runtime
 {
 	public class ScalePositions : MonoBehaviour
 	{

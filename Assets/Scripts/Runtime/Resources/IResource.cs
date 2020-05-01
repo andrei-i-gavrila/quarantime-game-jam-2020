@@ -1,4 +1,4 @@
-﻿namespace Thysia
+﻿namespace Runtime.Resources
 {
 	public interface IResource
 	{

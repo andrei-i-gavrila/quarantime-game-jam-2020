@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Terrain {
+namespace Runtime.Terrain {
     [System.Serializable]
     public class NoiseSettings {
         public int seed;

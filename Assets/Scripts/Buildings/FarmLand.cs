@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Resources;
+﻿using Resources;
 using UnityEngine;
 
 namespace Buildings
@@ -51,7 +49,7 @@ namespace Buildings
         private void SetActive()
         {
             var lastActive = (int) (wheat.Length * (1 - Depletion));
-            if (lastActive == 0 && Amount != 0)
+            if (lastActive == 0 && Amount > 0)
             {
                 lastActive = 1;
             }

@@ -15,6 +15,7 @@ namespace Runtime.Map
 
         public bool centralize = true;
         public int worldSize = 20;
+        public float tileSize = 10f;
 
         public NoiseSettings terrainNoise;
 
@@ -41,6 +42,7 @@ namespace Runtime.Map
 
         public TerrainData Generate()
         {
+            float halfTile = (float)(tileSize / 2.0);
             CreateMeshComponents();
 
             var numTilesPerLine = Mathf.CeilToInt(worldSize);
@@ -79,10 +81,10 @@ namespace Runtime.Map
 
                     var vertexCount = vertices[biomeIndex].Count;
 
-                    var topRight = new Vector3(min + x - 0.5f, GetCornerHeight(terrainData, x, y, -1, -1), min + y - 0.5f);
-                    var topLeft = new Vector3(min + x + 0.5f, GetCornerHeight(terrainData, x, y, 1, -1), min + y - 0.5f);
-                    var bottomRight = new Vector3(min + x - 0.5f, GetCornerHeight(terrainData, x, y, -1, 1), min + y + 0.5f);
-                    var bottomLeft = new Vector3(min + x + 0.5f, GetCornerHeight(terrainData, x, y, 1, 1), min + y + 0.5f);
+                    var topRight = new Vector3(min + x*tileSize - halfTile, GetCornerHeight(terrainData, x, y, -1, -1), min + y*tileSize - halfTile);
+                    var topLeft = new Vector3(min + x*tileSize + halfTile, GetCornerHeight(terrainData, x, y, 1, -1), min + y*tileSize - halfTile);
+                    var bottomRight = new Vector3(min + x*tileSize - halfTile, GetCornerHeight(terrainData, x, y, -1, 1), min + y*tileSize + halfTile);
+                    var bottomLeft = new Vector3(min + x*tileSize + halfTile, GetCornerHeight(terrainData, x, y, 1, 1), min + y*tileSize + halfTile);
                     
                     vertices[biomeIndex].AddRange(new[]
                     {
@@ -147,6 +149,8 @@ namespace Runtime.Map
                 sumHeight += terrainData.Depths[x, y + dy];
                 countHeights++;
             }
+
+            sumHeight *= tileSize;
 
             return sumHeight / countHeights;
         }

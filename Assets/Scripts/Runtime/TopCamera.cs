@@ -33,12 +33,13 @@ public class TopCamera : MonoBehaviour
     private void Update()
     {
         var panTranslation = Vector3.zero;
-        if (Input.mousePosition.x < Screen.width * scrollEdge) panTranslation += Vector3.left;
-        if (Input.mousePosition.x > Screen.width * (1 - scrollEdge)) panTranslation += Vector3.right;
+        if (Input.mousePosition.x < Screen.width * scrollEdge) panTranslation -= transform.right;
+        if (Input.mousePosition.x > Screen.width * (1 - scrollEdge)) panTranslation += transform.right;
 
-        
-        if (Input.mousePosition.y < Screen.height * scrollEdge) panTranslation += Vector3.back;
-        if (Input.mousePosition.y > Screen.height * (1 - scrollEdge)) panTranslation += Vector3.forward;
+
+        var forwardAxis = Vector3.Cross(transform.right, Vector3.up);
+        if (Input.mousePosition.y < Screen.height * scrollEdge) panTranslation -= forwardAxis;
+        if (Input.mousePosition.y > Screen.height * (1 - scrollEdge)) panTranslation += forwardAxis;
         
 
         if (panTranslation != Vector3.zero)

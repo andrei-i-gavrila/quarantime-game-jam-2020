@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 27bd7c9f84954dd4c82bfefb6a9c0f7a
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 50
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Diogenes
+  fontNames:
+  - Diogenes
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 30e6e824b5b773c469c44eed9b522803, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

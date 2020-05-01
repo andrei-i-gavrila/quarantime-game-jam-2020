@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
+using UnityEngine.Rendering;
 
 namespace Terrain
 {
@@ -201,7 +199,7 @@ namespace Terrain
             if (meshFilter.sharedMesh == null)
             {
                 mesh = new Mesh();
-                mesh.indexFormat = UnityEngine.Rendering.IndexFormat.UInt32;
+                mesh.indexFormat = IndexFormat.UInt32;
                 meshFilter.sharedMesh = mesh;
             }
             else
@@ -210,7 +208,7 @@ namespace Terrain
                 mesh.Clear();
             }
 
-            meshRenderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+            meshRenderer.shadowCastingMode = ShadowCastingMode.Off;
         }
 
         void OnValidate()
@@ -218,16 +216,7 @@ namespace Terrain
             needsUpdate = true;
         }
 
-        [Serializable]
-        public class Biome
-        {
-            public float height;
-            public float startDepth;
-            public float endDepth;
-            public Color startColor;
-            public Color endColor;
-            public int numSteps;
-        }
+        
 
         public class TerrainData
         {

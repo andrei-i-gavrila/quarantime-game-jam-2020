@@ -1,8 +1,5 @@
 ﻿using System;
-using UnityEditor.PackageManager.UI;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.SocialPlatforms;
 
 public class TopCamera : MonoBehaviour
 {

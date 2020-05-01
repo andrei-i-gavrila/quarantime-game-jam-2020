@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Runtime.Map
 {
@@ -7,8 +8,7 @@ namespace Runtime.Map
     public class Biome
     {
         public float height;
-        public float startDepth;
-        public float endDepth;
+        [FormerlySerializedAs("endDepth")] public float maxTerrainHeight;
         public Color startColor;
         public Color endColor;
         public int numSteps;

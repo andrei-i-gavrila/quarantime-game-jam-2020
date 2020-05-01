@@ -22,6 +22,7 @@ namespace Runtime.Map
 
         private MeshFilter[] _meshFilters;
         private MeshRenderer[] _meshRenderers;
+        private MeshCollider[] _meshColliders;
         private Mesh[] _meshes;
 
         private bool _needsUpdate;
@@ -76,7 +77,7 @@ namespace Runtime.Map
                     var biome = biomes[biomeIndex];
                     terrainData.BiomeIndices[x, y] = biomeIndex;
                     terrainData.BiomesStep[x, y] = biomeAndStep.y;
-                    terrainData.Depths[x, y] = Mathf.Lerp(biome.startDepth, biome.endDepth, biomeAndStep.y);
+                    terrainData.Depths[x, y] = biomeIndex > 0 ? Mathf.Lerp(biomes[biomeIndex-1].maxTerrainHeight, biome.maxTerrainHeight, biomeAndStep.y) : 0f;
                 }
             }
 
@@ -139,7 +140,7 @@ namespace Runtime.Map
             }
 
             // Update mesh:
-            for (int biomeIndex = 0; biomeIndex < biomes.Length; biomeIndex++)
+            for (var biomeIndex = 0; biomeIndex < biomes.Length; biomeIndex++)
             {
                 _meshes[biomeIndex].SetVertices(vertices[biomeIndex]);
                 _meshes[biomeIndex].SetTriangles(triangles[biomeIndex], 0, true);
@@ -180,6 +181,7 @@ namespace Runtime.Map
         {
             _meshFilters = new MeshFilter[biomes.Length];
             _meshRenderers = new MeshRenderer[biomes.Length];
+            _meshColliders = new MeshCollider[biomes.Length];
             _meshes = new Mesh[biomes.Length];
 
             for (var biomeIndex = 0; biomeIndex < biomes.Length; biomeIndex++)
@@ -192,21 +194,22 @@ namespace Runtime.Map
                     {
                         _meshFilters[biomeIndex] = holder.GetComponent<MeshFilter>();
                         _meshRenderers[biomeIndex] = holder.GetComponent<MeshRenderer>();
+                        _meshColliders[biomeIndex] = holder.GetComponent<MeshCollider>();
                     }
                     else
                     {
                         holder = new GameObject(terrainMeshName);
                         _meshRenderers[biomeIndex] = holder.AddComponent<MeshRenderer>();
                         _meshFilters[biomeIndex] = holder.AddComponent<MeshFilter>();
-                        holder.AddComponent<MeshCollider>();
+                        _meshColliders[biomeIndex] = holder.AddComponent<MeshCollider>();
                     }
                 }
 
-                if (_meshFilters[biomeIndex].sharedMesh == null)
+                if (_meshFilters[biomeIndex].sharedMesh == null || _meshColliders[biomeIndex].sharedMesh == null)
                 {
-                    _meshes[biomeIndex] = new Mesh();
-                    _meshes[biomeIndex].indexFormat = IndexFormat.UInt32;
+                    _meshes[biomeIndex] = new Mesh {indexFormat = IndexFormat.UInt32};
                     _meshFilters[biomeIndex].sharedMesh = _meshes[biomeIndex];
+                    _meshColliders[biomeIndex].sharedMesh = _meshes[biomeIndex];
                 }
                 else
                 {

@@ -49,22 +49,7 @@ namespace Runtime.Map
 
             var vertices = biomes.Select(_ => new List<Vector3>()).ToArray();
             var triangles = biomes.Select(_ => new List<int>()).ToArray();
-            var normals = biomes.Select(_ => new List<Vector3>()).ToArray();
 
-            // Some convenience stuff:
-            var upVectors = new[] {Vector3.up, Vector3.up, Vector3.up, Vector3.up};
-            var cardinalsDx = new[] {0, 0, -1, 1};
-            var cardinalsDy = new[] {1, -1, 0, 0};
-            var sideVertexIndexByDir = new[] {new[] {0, 1}, new[] {3, 2}, new[] {2, 0}, new[] {1, 3}};
-            var sideNormalsByDir = new[]
-            {
-                new[] {Vector3.forward, Vector3.forward, Vector3.forward, Vector3.forward},
-                new[] {Vector3.back, Vector3.back, Vector3.back, Vector3.back},
-                new[] {Vector3.left, Vector3.left, Vector3.left, Vector3.left},
-                new[] {Vector3.right, Vector3.right, Vector3.right, Vector3.right}
-            };
-
-            // Terrain data:
             var terrainData = new TerrainData(numTilesPerLine);
             var colors = biomes.Select(_ => new List<Color>()).ToArray();
 
@@ -77,7 +62,7 @@ namespace Runtime.Map
                     var biome = biomes[biomeIndex];
                     terrainData.BiomeIndices[x, y] = biomeIndex;
                     terrainData.BiomesStep[x, y] = biomeAndStep.y;
-                    terrainData.Depths[x, y] = biomeIndex > 0 ? Mathf.Lerp(biomes[biomeIndex-1].maxTerrainHeight, biome.maxTerrainHeight, biomeAndStep.y) : 0f;
+                    terrainData.Depths[x, y] = biomeIndex > 0 ? Mathf.Lerp(biomes[biomeIndex - 1].maxTerrainHeight, biome.maxTerrainHeight, biomeAndStep.y) : 0f;
                 }
             }
 
@@ -92,65 +77,78 @@ namespace Runtime.Map
                     var color = Color.Lerp(biome.startColor, biome.endColor, step);
                     var height = terrainData.Depths[x, y];
 
-                    var verticesColor = new[] {color, color, color, color};
-                    colors[biomeIndex].AddRange(verticesColor);
+                    var vertexCount = vertices[biomeIndex].Count;
 
-                    // Vertices
-                    var vertexIndex = vertices[biomeIndex].Count;
-                    var northWest = new Vector3(min + x, height, min + y + 1);
-                    var northEast = northWest + Vector3.right;
-                    var southWest = northWest - Vector3.forward;
-                    var southEast = southWest + Vector3.right;
-                    var cornerVertices = new[] {northWest, northEast, southWest, southEast};
-                    vertices[biomeIndex].AddRange(cornerVertices);
-                    normals[biomeIndex].AddRange(upVectors);
-                    triangles[biomeIndex].AddRange(new[] {vertexIndex, vertexIndex + 1, vertexIndex + 2});
-                    triangles[biomeIndex].AddRange(new[] {vertexIndex + 1, vertexIndex + 3, vertexIndex + 2});
-
-                    if (biomeIndex == 0) continue;
-
-                    for (var i = 0; i < 4; i++)
+                    var topRight = new Vector3(min + x - 0.5f, GetCornerHeight(terrainData, x, y, -1, -1), min + y - 0.5f);
+                    var topLeft = new Vector3(min + x + 0.5f, GetCornerHeight(terrainData, x, y, 1, -1), min + y - 0.5f);
+                    var bottomRight = new Vector3(min + x - 0.5f, GetCornerHeight(terrainData, x, y, -1, 1), min + y + 0.5f);
+                    var bottomLeft = new Vector3(min + x + 0.5f, GetCornerHeight(terrainData, x, y, 1, 1), min + y + 0.5f);
+                    
+                    vertices[biomeIndex].AddRange(new[]
                     {
-                        var neighbourX = x + cardinalsDx[i];
-                        var neighbourY = y + cardinalsDy[i];
-
-                        var neighbourIsOutOfBounds = neighbourX < 0 || neighbourX >= numTilesPerLine || neighbourY < 0 || neighbourY >= numTilesPerLine;
-
-                        if (neighbourIsOutOfBounds) continue;
-
-                        var depthOfNeighbour = terrainData.Depths[neighbourX, neighbourY] - height;
-
-                        if (depthOfNeighbour >= 0f) continue;
-
-                        vertexIndex = vertices[biomeIndex].Count;
-                        var edgeVertexIndexA = sideVertexIndexByDir[i][0];
-                        var edgeVertexIndexB = sideVertexIndexByDir[i][1];
-                        vertices[biomeIndex].Add(cornerVertices[edgeVertexIndexA]);
-                        vertices[biomeIndex].Add(cornerVertices[edgeVertexIndexA] + Vector3.up * depthOfNeighbour);
-                        vertices[biomeIndex].Add(cornerVertices[edgeVertexIndexB]);
-                        vertices[biomeIndex].Add(cornerVertices[edgeVertexIndexB] + Vector3.up * depthOfNeighbour);
-
-                        colors[biomeIndex].AddRange(verticesColor);
-                        triangles[biomeIndex].AddRange(new[] {vertexIndex, vertexIndex + 1, vertexIndex + 2, vertexIndex + 1, vertexIndex + 3, vertexIndex + 2});
-                        normals[biomeIndex].AddRange(sideNormalsByDir[i]);
-                    }
-
-                    // Terrain data:
+                        topLeft,
+                        topRight,
+                        bottomRight,
+                        bottomLeft
+                    });
+                    colors[biomeIndex].AddRange(new[]
+                    {
+                        color,
+                        color,
+                        color,
+                        color
+                    });
+                    triangles[biomeIndex].AddRange(new[]
+                    {
+                        vertexCount + 0, vertexCount + 1, vertexCount + 2,
+                        vertexCount + 0, vertexCount + 2, vertexCount + 3,
+                    });
                 }
             }
 
-            // Update mesh:
+
             for (var biomeIndex = 0; biomeIndex < biomes.Length; biomeIndex++)
             {
-                _meshes[biomeIndex].SetVertices(vertices[biomeIndex]);
-                _meshes[biomeIndex].SetTriangles(triangles[biomeIndex], 0, true);
-                _meshes[biomeIndex].SetColors(colors[biomeIndex]);
-                _meshes[biomeIndex].SetNormals(normals[biomeIndex]);
+                var mesh = _meshes[biomeIndex];
+                mesh.SetVertices(vertices[biomeIndex]);
+                mesh.SetTriangles(triangles[biomeIndex], 0, true);
+                mesh.SetColors(colors[biomeIndex]);
+                mesh.Optimize();
+                mesh.RecalculateNormals();
+                mesh.RecalculateTangents();
+                mesh.RecalculateBounds();
 
                 _meshRenderers[biomeIndex].sharedMaterial = biomes[biomeIndex].material;
             }
 
             return terrainData;
+        }
+
+        private float GetCornerHeight(TerrainData terrainData, int x, int y, int dx, int dy)
+        {
+            var sumHeight = terrainData.Depths[x, y];
+            var countHeights = 1f;
+
+            var dxExists = x + dx >= 0 && x + dx < terrainData.Size;
+            var dyExists = y + dy >= 0 && y + dy < terrainData.Size;
+            if (dxExists)
+            {
+                sumHeight += terrainData.Depths[x + dx, y];
+                countHeights++;
+                if (dyExists)
+                {
+                    sumHeight += terrainData.Depths[x + dx, y + dy];
+                    countHeights++;
+                }
+            }
+
+            if (dyExists)
+            {
+                sumHeight += terrainData.Depths[x, y + dy];
+                countHeights++;
+            }
+
+            return sumHeight / countHeights;
         }
 
         private Vector2 GetBiomeInfo(float height)

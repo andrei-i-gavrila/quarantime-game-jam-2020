@@ -27,6 +27,11 @@ namespace Terrain
 
         bool needsUpdate;
 
+        private void Start()
+        {
+            Generate();
+        }
+
         void Update()
         {
             if (needsUpdate && autoUpdate)
@@ -50,14 +55,14 @@ namespace Terrain
 
             // Some convenience stuff:
             var upVectors = new[] {Vector3.up, Vector3.up, Vector3.up, Vector3.up};
-            var cardinalsDx = new[] {1, 0, -1, 0};
-            var cardinalsDy = new[] {0, 1, 0, -1};
+            var cardinalsDx = new[] {0, 0, -1, 1};
+            var cardinalsDy = new[] {1, -1, 0, 0};
             var sideVertexIndexByDir = new[] {new[] {0, 1}, new[] {3, 2}, new[] {2, 0}, new[] {1, 3}};
             var sideNormalsByDir = new[]
             {
-                new[] {Vector3.forward, Vector3.forward, Vector3.forward, Vector3.forward}, 
+                new[] {Vector3.forward, Vector3.forward, Vector3.forward, Vector3.forward},
                 new[] {Vector3.back, Vector3.back, Vector3.back, Vector3.back},
-                new[] {Vector3.left, Vector3.left, Vector3.left, Vector3.left}, 
+                new[] {Vector3.left, Vector3.left, Vector3.left, Vector3.left},
                 new[] {Vector3.right, Vector3.right, Vector3.right, Vector3.right}
             };
 
@@ -73,8 +78,10 @@ namespace Terrain
                 {
                     var biomeAndStep = GetBiomeInfo(map[x, y]);
                     var biomeIndex = (int) biomeAndStep.x;
+                    var biome = biomes[biomeIndex];
                     terrainData.biomeIndices[x, y] = biomeIndex;
                     terrainData.biomesStep[x, y] = biomeAndStep.y;
+                    terrainData.depths[x, y] = Mathf.Lerp(biome.startDepth, biome.endDepth, biomeAndStep.y);
                 }
             }
 
@@ -86,13 +93,13 @@ namespace Terrain
                     var biome = biomes[terrainData.biomeIndices[x, y]];
                     var step = terrainData.biomesStep[x, y];
                     var color = Color.Lerp(biome.startColor, biome.endColor, step);
+                    var height = terrainData.depths[x, y];
 
                     var verticesColor = new[] {color, color, color, color};
                     colors.AddRange(verticesColor);
 
                     // Vertices
                     var vertexIndex = vertices.Count;
-                    var height = biome.depth;
                     var northWest = new Vector3(min + x, height, min + y + 1);
                     var northEast = northWest + Vector3.right;
                     var southWest = northWest - Vector3.forward;
@@ -112,9 +119,11 @@ namespace Terrain
 
                         var neighbourIsOutOfBounds = neighbourX < 0 || neighbourX >= numTilesPerLine || neighbourY < 0 || neighbourY >= numTilesPerLine;
 
-                        var depthOfNeighbour = neighbourIsOutOfBounds ? -1 : biomes[terrainData.biomeIndices[neighbourX, neighbourY]].depth - biome.depth;
+                        if (neighbourIsOutOfBounds) continue;
+                        
+                        var depthOfNeighbour = terrainData.depths[neighbourX, neighbourY] - height;
 
-                        if (depthOfNeighbour > 0) continue;
+                        if (depthOfNeighbour >= 0f) continue;
 
                         vertexIndex = vertices.Count;
                         var edgeVertexIndexA = sideVertexIndexByDir[i][0];
@@ -124,7 +133,7 @@ namespace Terrain
                         vertices.Add(cornerVertices[edgeVertexIndexB]);
                         vertices.Add(cornerVertices[edgeVertexIndexB] + Vector3.up * depthOfNeighbour);
 
-                        colors.AddRange(colors);
+                        colors.AddRange(verticesColor);
                         triangles.AddRange(new[] {vertexIndex, vertexIndex + 1, vertexIndex + 2, vertexIndex + 1, vertexIndex + 3, vertexIndex + 2});
                         normals.AddRange(sideNormalsByDir[i]);
                     }
@@ -213,7 +222,8 @@ namespace Terrain
         public class Biome
         {
             public float height;
-            public float depth;
+            public float startDepth;
+            public float endDepth;
             public Color startColor;
             public Color endColor;
             public int numSteps;
@@ -225,6 +235,7 @@ namespace Terrain
             public Vector3[,] tileCentres;
             public int[,] biomeIndices;
             public float[,] biomesStep;
+            public float[,] depths;
 
             public TerrainData(int size)
             {
@@ -232,6 +243,7 @@ namespace Terrain
                 tileCentres = new Vector3[size, size];
                 biomeIndices = new int[size, size];
                 biomesStep = new float[size, size];
+                depths = new float[size, size];
             }
         }
     }

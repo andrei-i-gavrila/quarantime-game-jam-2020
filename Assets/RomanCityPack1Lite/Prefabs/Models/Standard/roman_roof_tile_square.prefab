@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4376995357985044}
   - component: {fileID: 33755992802953024}
   - component: {fileID: 23049513992706822}
-  - component: {fileID: 64659734165861986}
   m_Layer: 0
   m_Name: roman_roof_tile_square
   m_TagString: Untagged
@@ -81,17 +80,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &64659734165861986
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1884100866707012}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 8dd85d51a24524301a6d16064da432b0, type: 3}

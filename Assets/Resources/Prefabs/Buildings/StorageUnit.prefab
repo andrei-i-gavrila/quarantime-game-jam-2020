@@ -11,14 +11,13 @@ GameObject:
   - component: {fileID: 4449516032678614970}
   - component: {fileID: 4456734149198578252}
   - component: {fileID: 4466957131394956728}
-  - component: {fileID: 4415377438528683998}
   m_Layer: 0
   m_Name: Wooden_barrel
   m_TagString: barrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4449516032678614970
 Transform:
   m_ObjectHideFlags: 0
@@ -80,19 +79,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &4415377438528683998
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4443900165916371266}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0274075, y: 1.1277919, z: 1.0274075}
-  m_Center: {x: 0, y: 0.56389594, z: 0}
 --- !u!1 &5411677707351780737
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,7 +90,6 @@ GameObject:
   - component: {fileID: 5410555883546586181}
   - component: {fileID: 5434792614581137419}
   - component: {fileID: 5425554296554840587}
-  - component: {fileID: 5476292908281066889}
   m_Layer: 0
   m_Name: greek_wall_2
   m_TagString: Untagged
@@ -174,20 +159,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5476292908281066889
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5411677707351780737}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300002, guid: f1367657d847b445c9c29ab1d32aaf45, type: 3}
 --- !u!1 &5411699415026521755
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,7 +170,6 @@ GameObject:
   - component: {fileID: 5406757280992877029}
   - component: {fileID: 5431882499224852623}
   - component: {fileID: 5425297294971365567}
-  - component: {fileID: 5475642086462862203}
   m_Layer: 0
   m_Name: greek_wall_divider_2
   m_TagString: Untagged
@@ -268,20 +238,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5475642086462862203
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5411699415026521755}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 2d2e1fd5462c74fc88283701d773cbe4, type: 3}
 --- !u!1 &5412320750647052167
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,7 +249,6 @@ GameObject:
   - component: {fileID: 5410563421673564267}
   - component: {fileID: 5435474415842750125}
   - component: {fileID: 5426015960217772427}
-  - component: {fileID: 5476138213270001071}
   m_Layer: 0
   m_Name: greek_wall_column_1
   m_TagString: Untagged
@@ -364,20 +319,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5476138213270001071
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5412320750647052167}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 819e9c05580c44490b5bc1ebff5d3f76, type: 3}
 --- !u!1 &5412458009551261451
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,7 +330,6 @@ GameObject:
   - component: {fileID: 5406882791090508269}
   - component: {fileID: 5435497909266261359}
   - component: {fileID: 5425184368404097437}
-  - component: {fileID: 5475475175030958559}
   m_Layer: 0
   m_Name: greek_wall_2
   m_TagString: Untagged
@@ -458,20 +398,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5475475175030958559
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5412458009551261451}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300002, guid: f1367657d847b445c9c29ab1d32aaf45, type: 3}
 --- !u!1 &5412526886666278093
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,7 +409,6 @@ GameObject:
   - component: {fileID: 5406696421109269551}
   - component: {fileID: 5435787599519891943}
   - component: {fileID: 5426120360584154597}
-  - component: {fileID: 5475561131058542435}
   m_Layer: 0
   m_Name: greek_wall_column_1
   m_TagString: Untagged
@@ -554,20 +479,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5475561131058542435
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5412526886666278093}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 819e9c05580c44490b5bc1ebff5d3f76, type: 3}
 --- !u!1 &5412575114874175239
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,7 +490,6 @@ GameObject:
   - component: {fileID: 5410612645926888259}
   - component: {fileID: 5434744703541203181}
   - component: {fileID: 5425476253618873955}
-  - component: {fileID: 5475444449958053809}
   m_Layer: 0
   m_Name: greek_wall_divider_2
   m_TagString: Untagged
@@ -648,20 +558,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5475444449958053809
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5412575114874175239}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 2d2e1fd5462c74fc88283701d773cbe4, type: 3}
 --- !u!1 &5412664835197985697
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,7 +569,6 @@ GameObject:
   - component: {fileID: 5410755576402635353}
   - component: {fileID: 5435302852998653397}
   - component: {fileID: 5426168041000484765}
-  - component: {fileID: 5476206490110327447}
   m_Layer: 0
   m_Name: greek_wall_2_door
   m_TagString: Untagged
@@ -743,20 +638,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5476206490110327447
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5412664835197985697}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300002, guid: 24649b3c37e4a491abf8ef731ffbd5df, type: 3}
 --- !u!1 &5412697332141263061
 GameObject:
   m_ObjectHideFlags: 0
@@ -767,6 +648,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5410953802582641493}
   - component: {fileID: 5412697332141263060}
+  - component: {fileID: 204279395587537156}
+  - component: {fileID: 2053812361941405985}
+  - component: {fileID: 4644217191866057842}
   m_Layer: 0
   m_Name: StorageUnit
   m_TagString: Untagged
@@ -838,7 +722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StorageCapacity: 500
-  _stored: 486
+  Stored: 0
   barrels:
   - {fileID: 4443900165916371266}
   - {fileID: 8147791934473697855}
@@ -864,6 +748,47 @@ MonoBehaviour:
   - {fileID: 8147791933513850512}
   - {fileID: 8147791934153637718}
   - {fileID: 8147791933224119131}
+--- !u!114 &204279395587537156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5412697332141263061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3ba383ccf6b6fa489187ceda5f77a98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &2053812361941405985
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5412697332141263061}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.81, y: 3.75, z: 4.84}
+  m_Center: {x: 0, y: 1.85, z: 0.14}
+--- !u!54 &4644217191866057842
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5412697332141263061}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &5413028563439707023
 GameObject:
   m_ObjectHideFlags: 0
@@ -875,7 +800,6 @@ GameObject:
   - component: {fileID: 5410654893547944633}
   - component: {fileID: 5435447732301771625}
   - component: {fileID: 5425394108114975943}
-  - component: {fileID: 5475600884643748293}
   m_Layer: 0
   m_Name: greek_floor_stone_1
   m_TagString: Untagged
@@ -946,20 +870,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5475600884643748293
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5413028563439707023}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 69eb944f6a0da40f7b2dedf645a16d6d, type: 3}
 --- !u!1 &5413081805958900971
 GameObject:
   m_ObjectHideFlags: 0
@@ -971,7 +881,6 @@ GameObject:
   - component: {fileID: 5407041667240994147}
   - component: {fileID: 5435382839794198507}
   - component: {fileID: 5425708605942042771}
-  - component: {fileID: 5475646641727083071}
   m_Layer: 0
   m_Name: greek_wall_2
   m_TagString: Untagged
@@ -1040,20 +949,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5475646641727083071
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5413081805958900971}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300002, guid: f1367657d847b445c9c29ab1d32aaf45, type: 3}
 --- !u!1 &5413084420062246931
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,7 +960,6 @@ GameObject:
   - component: {fileID: 5406987774320143583}
   - component: {fileID: 5431872660902888115}
   - component: {fileID: 5425597700222326339}
-  - component: {fileID: 5475378605516408405}
   m_Layer: 0
   m_Name: greek_wall_divider_2
   m_TagString: Untagged
@@ -1134,20 +1028,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5475378605516408405
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5413084420062246931}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 2d2e1fd5462c74fc88283701d773cbe4, type: 3}
 --- !u!1 &5413162608895977513
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,7 +1039,6 @@ GameObject:
   - component: {fileID: 5410855395650515935}
   - component: {fileID: 5435494731215144349}
   - component: {fileID: 5425598378327945573}
-  - component: {fileID: 5474731398095076101}
   m_Layer: 0
   m_Name: greek_column_2
   m_TagString: Untagged
@@ -1228,20 +1107,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5474731398095076101
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5413162608895977513}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300002, guid: 7bb1029da8cb8486a961bb80138c7219, type: 3}
 --- !u!1 &5413204159857770213
 GameObject:
   m_ObjectHideFlags: 0
@@ -1253,7 +1118,6 @@ GameObject:
   - component: {fileID: 5406987123062194941}
   - component: {fileID: 5435839453342880769}
   - component: {fileID: 5425510516465714721}
-  - component: {fileID: 5475799266217853623}
   m_Layer: 0
   m_Name: greek_wall_divider_2
   m_TagString: Untagged
@@ -1322,20 +1186,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5475799266217853623
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5413204159857770213}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 2d2e1fd5462c74fc88283701d773cbe4, type: 3}
 --- !u!1 &5413243294042059511
 GameObject:
   m_ObjectHideFlags: 0
@@ -1347,7 +1197,6 @@ GameObject:
   - component: {fileID: 5406992799141287423}
   - component: {fileID: 5435606550490873557}
   - component: {fileID: 5425388927088888023}
-  - component: {fileID: 5475474279502187007}
   m_Layer: 0
   m_Name: greek_column_2
   m_TagString: Untagged
@@ -1416,20 +1265,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5475474279502187007
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5413243294042059511}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300002, guid: 7bb1029da8cb8486a961bb80138c7219, type: 3}
 --- !u!1 &8147791932498185176
 GameObject:
   m_ObjectHideFlags: 0
@@ -1441,14 +1276,13 @@ GameObject:
   - component: {fileID: 8147791932498185179}
   - component: {fileID: 8147791932498185180}
   - component: {fileID: 8147791932498185181}
-  - component: {fileID: 8147791932498185178}
   m_Layer: 0
   m_Name: Wooden_barrel (6)
   m_TagString: barrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8147791932498185179
 Transform:
   m_ObjectHideFlags: 0
@@ -1510,19 +1344,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8147791932498185178
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8147791932498185176}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0274075, y: 1.1277919, z: 1.0274075}
-  m_Center: {x: 0, y: 0.56389594, z: 0}
 --- !u!1 &8147791932524033745
 GameObject:
   m_ObjectHideFlags: 0
@@ -1534,14 +1355,13 @@ GameObject:
   - component: {fileID: 8147791932524033744}
   - component: {fileID: 8147791932524033749}
   - component: {fileID: 8147791932524033746}
-  - component: {fileID: 8147791932524033747}
   m_Layer: 0
   m_Name: Wooden_barrel (22)
   m_TagString: barrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8147791932524033744
 Transform:
   m_ObjectHideFlags: 0
@@ -1603,19 +1423,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8147791932524033747
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8147791932524033745}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0274075, y: 1.1277919, z: 1.0274075}
-  m_Center: {x: 0, y: 0.56389594, z: 0}
 --- !u!1 &8147791932540465413
 GameObject:
   m_ObjectHideFlags: 0
@@ -1627,14 +1434,13 @@ GameObject:
   - component: {fileID: 8147791932540465412}
   - component: {fileID: 8147791932540465417}
   - component: {fileID: 8147791932540465414}
-  - component: {fileID: 8147791932540465415}
   m_Layer: 0
   m_Name: Wooden_barrel (3)
   m_TagString: barrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8147791932540465412
 Transform:
   m_ObjectHideFlags: 0
@@ -1696,19 +1502,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8147791932540465415
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8147791932540465413}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0274075, y: 1.1277919, z: 1.0274075}
-  m_Center: {x: 0, y: 0.56389594, z: 0}
 --- !u!1 &8147791932563683252
 GameObject:
   m_ObjectHideFlags: 0
@@ -1720,14 +1513,13 @@ GameObject:
   - component: {fileID: 8147791932563683255}
   - component: {fileID: 8147791932563683256}
   - component: {fileID: 8147791932563683257}
-  - component: {fileID: 8147791932563683254}
   m_Layer: 0
   m_Name: Wooden_barrel (10)
   m_TagString: barrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8147791932563683255
 Transform:
   m_ObjectHideFlags: 0
@@ -1789,19 +1581,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8147791932563683254
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8147791932563683252}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0274075, y: 1.1277919, z: 1.0274075}
-  m_Center: {x: 0, y: 0.56389594, z: 0}
 --- !u!1 &8147791932563917646
 GameObject:
   m_ObjectHideFlags: 0
@@ -1813,14 +1592,13 @@ GameObject:
   - component: {fileID: 8147791932563917649}
   - component: {fileID: 8147791932563917650}
   - component: {fileID: 8147791932563917651}
-  - component: {fileID: 8147791932563917648}
   m_Layer: 0
   m_Name: Wooden_barrel (14)
   m_TagString: barrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8147791932563917649
 Transform:
   m_ObjectHideFlags: 0
@@ -1882,19 +1660,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8147791932563917648
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8147791932563917646}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0274075, y: 1.1277919, z: 1.0274075}
-  m_Center: {x: 0, y: 0.56389594, z: 0}
 --- !u!1 &8147791932657040616
 GameObject:
   m_ObjectHideFlags: 0
@@ -1906,14 +1671,13 @@ GameObject:
   - component: {fileID: 8147791932657040619}
   - component: {fileID: 8147791932657040620}
   - component: {fileID: 8147791932657040621}
-  - component: {fileID: 8147791932657040618}
   m_Layer: 0
   m_Name: Wooden_barrel (5)
   m_TagString: barrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8147791932657040619
 Transform:
   m_ObjectHideFlags: 0
@@ -1975,19 +1739,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8147791932657040618
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8147791932657040616}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0274075, y: 1.1277919, z: 1.0274075}
-  m_Center: {x: 0, y: 0.56389594, z: 0}
 --- !u!1 &8147791932659235754
 GameObject:
   m_ObjectHideFlags: 0
@@ -1999,14 +1750,13 @@ GameObject:
   - component: {fileID: 8147791932659235757}
   - component: {fileID: 8147791932659235758}
   - component: {fileID: 8147791932659235759}
-  - component: {fileID: 8147791932659235756}
   m_Layer: 0
   m_Name: Wooden_barrel (13)
   m_TagString: barrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8147791932659235757
 Transform:
   m_ObjectHideFlags: 0
@@ -2068,19 +1818,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8147791932659235756
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8147791932659235754}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0274075, y: 1.1277919, z: 1.0274075}
-  m_Center: {x: 0, y: 0.56389594, z: 0}
 --- !u!1 &8147791932759199939
 GameObject:
   m_ObjectHideFlags: 0
@@ -2092,14 +1829,13 @@ GameObject:
   - component: {fileID: 8147791932759199938}
   - component: {fileID: 8147791932759199943}
   - component: {fileID: 8147791932759199940}
-  - component: {fileID: 8147791932759199941}
   m_Layer: 0
   m_Name: Wooden_barrel (19)
   m_TagString: barrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8147791932759199938
 Transform:
   m_ObjectHideFlags: 0
@@ -2161,19 +1897,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8147791932759199941
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8147791932759199939}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0274075, y: 1.1277919, z: 1.0274075}
-  m_Center: {x: 0, y: 0.56389594, z: 0}
 --- !u!1 &8147791933032383122
 GameObject:
   m_ObjectHideFlags: 0
@@ -2185,14 +1908,13 @@ GameObject:
   - component: {fileID: 8147791933032383125}
   - component: {fileID: 8147791933032383126}
   - component: {fileID: 8147791933032383127}
-  - component: {fileID: 8147791933032383124}
   m_Layer: 0
   m_Name: Wooden_barrel (17)
   m_TagString: barrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8147791933032383125
 Transform:
   m_ObjectHideFlags: 0
@@ -2254,19 +1976,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8147791933032383124
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8147791933032383122}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0274075, y: 1.1277919, z: 1.0274075}
-  m_Center: {x: 0, y: 0.56389594, z: 0}
 --- !u!1 &8147791933224119131
 GameObject:
   m_ObjectHideFlags: 0
@@ -2278,7 +1987,6 @@ GameObject:
   - component: {fileID: 8147791933224119130}
   - component: {fileID: 8147791933224119135}
   - component: {fileID: 8147791933224119132}
-  - component: {fileID: 8147791933224119133}
   m_Layer: 0
   m_Name: Wooden_barrel (20)
   m_TagString: barrel
@@ -2347,19 +2055,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8147791933224119133
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8147791933224119131}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0274075, y: 1.1277919, z: 1.0274075}
-  m_Center: {x: 0, y: 0.56389594, z: 0}
 --- !u!1 &8147791933244162765
 GameObject:
   m_ObjectHideFlags: 0
@@ -2371,14 +2066,13 @@ GameObject:
   - component: {fileID: 8147791933244162764}
   - component: {fileID: 8147791933244162769}
   - component: {fileID: 8147791933244162766}
-  - component: {fileID: 8147791933244162767}
   m_Layer: 0
   m_Name: Wooden_barrel (2)
   m_TagString: barrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8147791933244162764
 Transform:
   m_ObjectHideFlags: 0
@@ -2440,19 +2134,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8147791933244162767
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8147791933244162765}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0274075, y: 1.1277919, z: 1.0274075}
-  m_Center: {x: 0, y: 0.56389594, z: 0}
 --- !u!1 &8147791933270927125
 GameObject:
   m_ObjectHideFlags: 0
@@ -2464,14 +2145,13 @@ GameObject:
   - component: {fileID: 8147791933270927124}
   - component: {fileID: 8147791933270927129}
   - component: {fileID: 8147791933270927126}
-  - component: {fileID: 8147791933270927127}
   m_Layer: 0
   m_Name: Wooden_barrel (9)
   m_TagString: barrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8147791933270927124
 Transform:
   m_ObjectHideFlags: 0
@@ -2533,19 +2213,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8147791933270927127
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8147791933270927125}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0274075, y: 1.1277919, z: 1.0274075}
-  m_Center: {x: 0, y: 0.56389594, z: 0}
 --- !u!1 &8147791933467983170
 GameObject:
   m_ObjectHideFlags: 0
@@ -2557,14 +2224,13 @@ GameObject:
   - component: {fileID: 8147791933467983173}
   - component: {fileID: 8147791933467983174}
   - component: {fileID: 8147791933467983175}
-  - component: {fileID: 8147791933467983172}
   m_Layer: 0
   m_Name: Wooden_barrel (4)
   m_TagString: barrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8147791933467983173
 Transform:
   m_ObjectHideFlags: 0
@@ -2626,19 +2292,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8147791933467983172
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8147791933467983170}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0274075, y: 1.1277919, z: 1.0274075}
-  m_Center: {x: 0, y: 0.56389594, z: 0}
 --- !u!1 &8147791933513850512
 GameObject:
   m_ObjectHideFlags: 0
@@ -2650,14 +2303,13 @@ GameObject:
   - component: {fileID: 8147791933513850515}
   - component: {fileID: 8147791933513850516}
   - component: {fileID: 8147791933513850517}
-  - component: {fileID: 8147791933513850514}
   m_Layer: 0
   m_Name: Wooden_barrel (21)
   m_TagString: barrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8147791933513850515
 Transform:
   m_ObjectHideFlags: 0
@@ -2719,19 +2371,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8147791933513850514
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8147791933513850512}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0274075, y: 1.1277919, z: 1.0274075}
-  m_Center: {x: 0, y: 0.56389594, z: 0}
 --- !u!1 &8147791933804035777
 GameObject:
   m_ObjectHideFlags: 0
@@ -2743,14 +2382,13 @@ GameObject:
   - component: {fileID: 8147791933804035776}
   - component: {fileID: 8147791933804035781}
   - component: {fileID: 8147791933804035778}
-  - component: {fileID: 8147791933804035779}
   m_Layer: 0
   m_Name: Wooden_barrel (7)
   m_TagString: barrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8147791933804035776
 Transform:
   m_ObjectHideFlags: 0
@@ -2812,19 +2450,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8147791933804035779
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8147791933804035777}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0274075, y: 1.1277919, z: 1.0274075}
-  m_Center: {x: 0, y: 0.56389594, z: 0}
 --- !u!1 &8147791933830479092
 GameObject:
   m_ObjectHideFlags: 0
@@ -2836,14 +2461,13 @@ GameObject:
   - component: {fileID: 8147791933830479095}
   - component: {fileID: 8147791933830479096}
   - component: {fileID: 8147791933830479097}
-  - component: {fileID: 8147791933830479094}
   m_Layer: 0
   m_Name: Wooden_barrel (15)
   m_TagString: barrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8147791933830479095
 Transform:
   m_ObjectHideFlags: 0
@@ -2905,19 +2529,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8147791933830479094
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8147791933830479092}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0274075, y: 1.1277919, z: 1.0274075}
-  m_Center: {x: 0, y: 0.56389594, z: 0}
 --- !u!1 &8147791934153637718
 GameObject:
   m_ObjectHideFlags: 0
@@ -2929,14 +2540,13 @@ GameObject:
   - component: {fileID: 8147791934153637721}
   - component: {fileID: 8147791934153637722}
   - component: {fileID: 8147791934153637723}
-  - component: {fileID: 8147791934153637720}
   m_Layer: 0
   m_Name: Wooden_barrel (16)
   m_TagString: barrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8147791934153637721
 Transform:
   m_ObjectHideFlags: 0
@@ -2998,19 +2608,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8147791934153637720
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8147791934153637718}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0274075, y: 1.1277919, z: 1.0274075}
-  m_Center: {x: 0, y: 0.56389594, z: 0}
 --- !u!1 &8147791934288216192
 GameObject:
   m_ObjectHideFlags: 0
@@ -3022,14 +2619,13 @@ GameObject:
   - component: {fileID: 8147791934288216195}
   - component: {fileID: 8147791934288216196}
   - component: {fileID: 8147791934288216197}
-  - component: {fileID: 8147791934288216194}
   m_Layer: 0
   m_Name: Wooden_barrel (11)
   m_TagString: barrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8147791934288216195
 Transform:
   m_ObjectHideFlags: 0
@@ -3091,19 +2687,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8147791934288216194
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8147791934288216192}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0274075, y: 1.1277919, z: 1.0274075}
-  m_Center: {x: 0, y: 0.56389594, z: 0}
 --- !u!1 &8147791934372758537
 GameObject:
   m_ObjectHideFlags: 0
@@ -3115,14 +2698,13 @@ GameObject:
   - component: {fileID: 8147791934372758536}
   - component: {fileID: 8147791934372758541}
   - component: {fileID: 8147791934372758538}
-  - component: {fileID: 8147791934372758539}
   m_Layer: 0
   m_Name: Wooden_barrel (12)
   m_TagString: barrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8147791934372758536
 Transform:
   m_ObjectHideFlags: 0
@@ -3184,19 +2766,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8147791934372758539
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8147791934372758537}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0274075, y: 1.1277919, z: 1.0274075}
-  m_Center: {x: 0, y: 0.56389594, z: 0}
 --- !u!1 &8147791934385913322
 GameObject:
   m_ObjectHideFlags: 0
@@ -3208,14 +2777,13 @@ GameObject:
   - component: {fileID: 8147791934385913325}
   - component: {fileID: 8147791934385913326}
   - component: {fileID: 8147791934385913327}
-  - component: {fileID: 8147791934385913324}
   m_Layer: 0
   m_Name: Wooden_barrel (18)
   m_TagString: barrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8147791934385913325
 Transform:
   m_ObjectHideFlags: 0
@@ -3277,19 +2845,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8147791934385913324
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8147791934385913322}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0274075, y: 1.1277919, z: 1.0274075}
-  m_Center: {x: 0, y: 0.56389594, z: 0}
 --- !u!1 &8147791934457739942
 GameObject:
   m_ObjectHideFlags: 0
@@ -3301,14 +2856,13 @@ GameObject:
   - component: {fileID: 8147791934457739945}
   - component: {fileID: 8147791934457739946}
   - component: {fileID: 8147791934457739947}
-  - component: {fileID: 8147791934457739944}
   m_Layer: 0
   m_Name: Wooden_barrel (8)
   m_TagString: barrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8147791934457739945
 Transform:
   m_ObjectHideFlags: 0
@@ -3370,19 +2924,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8147791934457739944
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8147791934457739942}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0274075, y: 1.1277919, z: 1.0274075}
-  m_Center: {x: 0, y: 0.56389594, z: 0}
 --- !u!1 &8147791934473697855
 GameObject:
   m_ObjectHideFlags: 0
@@ -3394,14 +2935,13 @@ GameObject:
   - component: {fileID: 8147791934473697854}
   - component: {fileID: 8147791934473697987}
   - component: {fileID: 8147791934473697984}
-  - component: {fileID: 8147791934473697985}
   m_Layer: 0
   m_Name: Wooden_barrel (1)
   m_TagString: barrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8147791934473697854
 Transform:
   m_ObjectHideFlags: 0
@@ -3463,19 +3003,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8147791934473697985
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8147791934473697855}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0274075, y: 1.1277919, z: 1.0274075}
-  m_Center: {x: 0, y: 0.56389594, z: 0}
 --- !u!1 &8147791934593972887
 GameObject:
   m_ObjectHideFlags: 0
@@ -3487,14 +3014,13 @@ GameObject:
   - component: {fileID: 8147791934593972886}
   - component: {fileID: 8147791934593972891}
   - component: {fileID: 8147791934593972888}
-  - component: {fileID: 8147791934593972889}
   m_Layer: 0
   m_Name: Wooden_barrel (23)
   m_TagString: barrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8147791934593972886
 Transform:
   m_ObjectHideFlags: 0
@@ -3556,16 +3082,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8147791934593972889
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8147791934593972887}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0274075, y: 1.1277919, z: 1.0274075}
-  m_Center: {x: 0, y: 0.56389594, z: 0}

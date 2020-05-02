@@ -47,9 +47,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxAmount: 30
   _amount: 30
-  stoneMaterials:
-  - {fileID: 2100000, guid: 443a7defc6376eb4f9669869d9b83973, type: 2}
-  - {fileID: 2100000, guid: 12de9f331d82a7949abf658efcf8c5de, type: 2}
 --- !u!135 &6583980198012632805
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -74,7 +71,6 @@ GameObject:
   - component: {fileID: 664631421795162714}
   - component: {fileID: 671143160170796982}
   - component: {fileID: 683233996345602622}
-  - component: {fileID: 706280296844787482}
   m_Layer: 0
   m_Name: RockModel3
   m_TagString: Untagged
@@ -143,20 +139,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &706280296844787482
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 661383839163739378}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 4dcb02e0710447b43a210be5ba316d8c, type: 3}
 --- !u!1 &1112017433880625993
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,7 +150,6 @@ GameObject:
   - component: {fileID: 1110023485564110201}
   - component: {fileID: 1089163990665898155}
   - component: {fileID: 1097929752374769057}
-  - component: {fileID: 1120166474578957493}
   m_Layer: 0
   m_Name: RockModel2
   m_TagString: Untagged
@@ -237,20 +218,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &1120166474578957493
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1112017433880625993}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 6fa880df4a27f1e4dbd006fbb31d2bde, type: 3}
 --- !u!1 &1791262402287691282
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,9 +265,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxAmount: 20
   _amount: 20
-  stoneMaterials:
-  - {fileID: 2100000, guid: 443a7defc6376eb4f9669869d9b83973, type: 2}
-  - {fileID: 2100000, guid: 12de9f331d82a7949abf658efcf8c5de, type: 2}
 --- !u!135 &4537351230286600068
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -412,9 +376,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxAmount: 90
   _amount: 90
-  stoneMaterials:
-  - {fileID: 2100000, guid: 443a7defc6376eb4f9669869d9b83973, type: 2}
-  - {fileID: 2100000, guid: 12de9f331d82a7949abf658efcf8c5de, type: 2}
 --- !u!135 &6419763201453336594
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -439,7 +400,6 @@ GameObject:
   - component: {fileID: 299779821475733511}
   - component: {fileID: 5114333247387865572}
   - component: {fileID: 1522826580834833423}
-  - component: {fileID: 8451021732934334721}
   m_Layer: 0
   m_Name: RockModel1
   m_TagString: Untagged
@@ -508,17 +468,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &8451021732934334721
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8583598859744171005}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 9ef95a6cb09d23c428ad9eac181788bd, type: 3}

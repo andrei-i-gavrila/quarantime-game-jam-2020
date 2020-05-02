@@ -91,7 +91,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 6fa880df4a27f1e4dbd006fbb31d2bde, type: 3}
 --- !u!1 &6317043102409936201
@@ -141,9 +141,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxAmount: 50
   _amount: 50
-  stoneMaterials:
-  - {fileID: 2100000, guid: 443a7defc6376eb4f9669869d9b83973, type: 2}
-  - {fileID: 2100000, guid: 12de9f331d82a7949abf658efcf8c5de, type: 2}
 --- !u!135 &3745465274971802921
 SphereCollider:
   m_ObjectHideFlags: 0

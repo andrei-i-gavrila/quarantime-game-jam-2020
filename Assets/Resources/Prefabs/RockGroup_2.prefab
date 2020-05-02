@@ -47,9 +47,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxAmount: 40
   _amount: 40
-  stoneMaterials:
-  - {fileID: 2100000, guid: 443a7defc6376eb4f9669869d9b83973, type: 2}
-  - {fileID: 2100000, guid: 12de9f331d82a7949abf658efcf8c5de, type: 2}
 --- !u!135 &6583980198012632805
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -154,7 +151,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 4dcb02e0710447b43a210be5ba316d8c, type: 3}
 --- !u!1 &1112017433880625993
@@ -248,7 +245,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 6fa880df4a27f1e4dbd006fbb31d2bde, type: 3}
 --- !u!1 &1791262402287691282
@@ -298,9 +295,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxAmount: 30
   _amount: 30
-  stoneMaterials:
-  - {fileID: 2100000, guid: 443a7defc6376eb4f9669869d9b83973, type: 2}
-  - {fileID: 2100000, guid: 12de9f331d82a7949abf658efcf8c5de, type: 2}
 --- !u!135 &4537351230286600068
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -412,9 +406,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxAmount: 50
   _amount: 50
-  stoneMaterials:
-  - {fileID: 2100000, guid: 443a7defc6376eb4f9669869d9b83973, type: 2}
-  - {fileID: 2100000, guid: 12de9f331d82a7949abf658efcf8c5de, type: 2}
 --- !u!135 &6419763201453336594
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -519,6 +510,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 9ef95a6cb09d23c428ad9eac181788bd, type: 3}

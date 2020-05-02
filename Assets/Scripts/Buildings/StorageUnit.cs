@@ -25,12 +25,12 @@ namespace Buildings
         // Start is called before the first frame update
         void Start()
         {
-            _inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
-            resourceTypes.ForEach(resourceType => _inventory.RegisterStorage(resourceType, this));
-            for (var i = 0; i < barrels.Length; i++) {
-                barrels[i].transform.RotateAround(barrels[i].transform.position, barrels[i].transform.up, Random.Range(0, 360));
-                barrels[i].transform.Translate(Random.Range(-0.04f,0.04f), 0, Random.Range(-0.04f,0.04f));
-            }
+            // _inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
+            // resourceTypes.ForEach(resourceType => _inventory.RegisterStorage(resourceType, this));
+            // for (var i = 0; i < barrels.Length; i++) {
+                // barrels[i].transform.RotateAround(barrels[i].transform.position, barrels[i].transform.up, Random.Range(0, 360));
+                // barrels[i].transform.Translate(Random.Range(-0.04f,0.04f), 0, Random.Range(-0.04f,0.04f));
+            // }
         }
 
         // Update is called once per frame
@@ -41,7 +41,7 @@ namespace Buildings
 
         private void OnDestroy()
         {
-            resourceTypes.ForEach(resourceType => _inventory.UnregisterStorage(resourceType, this));
+            // resourceTypes.ForEach(resourceType => _inventory.UnregisterStorage(resourceType, this));
         }
 
         public bool Accepts(int resource)

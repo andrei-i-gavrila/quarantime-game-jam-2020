@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
+using DefaultNamespace.UI;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class SelectBuildPosition : MonoBehaviour
 {
@@ -8,6 +11,7 @@ public class SelectBuildPosition : MonoBehaviour
     public bool building;
     public GameObject template;
     public Camera camera;
+    public GameObject radialMenu;
     
     // Start is called before the first frame update
     void Start()
@@ -19,25 +23,38 @@ public class SelectBuildPosition : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.B))
         {
-            building = true;
+            Destroy(template);
+            radialMenu.SetActive(true);
         };
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            Destroy(template);
+            template = null;
             building = false;
         };
-        
+        var collisionList = template.GetComponent<CollisionList>();
+        if (collisionList.CollisionCount() > 0)
+        {
+            template.
+        }
+        else
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+                Destroy(template.GetComponent<Rigidbody>());
+                template = null;
+                building = false;
+            }
+        }
+
         if (building)
         {
             // template.SetActive(true);
             RaycastHit hit;
             Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-            Debug.Log("----");
-            Debug.Log(ray);
             int mask = LayerMask.GetMask("Terrain");
             
             if (Physics.Raycast(ray, out hit, float.PositiveInfinity, mask)) {
-                Debug.Log(hit);
-                Debug.Log(hit.transform.position);
                 var objectHit = hit.point;
 
                 template.transform.position = objectHit;
@@ -49,4 +66,12 @@ public class SelectBuildPosition : MonoBehaviour
         }
         
     }
+
+    public void SetPrefab(GameObject gameObject)
+    {
+        this.radialMenu.SetActive(false);
+        this.template = Instantiate(gameObject);
+        this.building = true;
+    }
+    
 }

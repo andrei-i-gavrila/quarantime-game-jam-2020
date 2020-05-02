@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using Buildings;
+using DefaultNamespace;
 using DefaultNamespace.UI;
 using Resources;
 using Runtime.Resources;
@@ -12,9 +13,10 @@ public class SelectBuildPosition : MonoBehaviour
 {
 
     public bool building;
-    public GameObject template;
+    private GameObject template;
     public Camera camera;
     public GameObject radialMenu;
+    public Inventory inventory;
     
     // Start is called before the first frame update
     void Start()
@@ -46,6 +48,14 @@ public class SelectBuildPosition : MonoBehaviour
             {
                 if (Input.GetMouseButtonDown(0))
                 {
+                    var price = template.GetComponent<BuildingPrice>().price;
+                    for (int i = 0; i < price.Length; i++)
+                    {
+                        if (price[i] > 0)
+                        {
+                            inventory.TakeResource(i, price[i]);
+                        }
+                    }
                     Destroy(template.GetComponent<Rigidbody>());
                     var b = template.GetComponent<IBuilding>();
                     if (b != null)
@@ -76,6 +86,14 @@ public class SelectBuildPosition : MonoBehaviour
 
     public void SetPrefab(GameObject gameObject)
     {
+        var price = gameObject.GetComponent<BuildingPrice>().price;
+        for (int i = 0; i < price.Length; i++)
+        {
+            if (price[i] > 0 && inventory.GetAmount(i) < price[i])
+            {
+                return;
+            }
+        }
         this.radialMenu.SetActive(false);
         this.template = Instantiate(gameObject);
         this.building = true;

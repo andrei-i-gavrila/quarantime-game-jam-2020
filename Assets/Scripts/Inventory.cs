@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Resources;
 using UnityEngine;
@@ -18,6 +19,17 @@ public class Inventory : MonoBehaviour
     {
         if (!_init) Init();
         InvokeRepeating(nameof(ProduceResources), 0f, 1f);
+    }
+    public void TakeResource(int resource, int amount)
+    {
+        Debug.Log(resource);
+        Debug.Log(amount);
+        _storages[resource].ForEach(storage =>
+        {
+            var take = Math.Min(amount, storage.Stored);
+            storage.TakeResource(resource, amount);
+            amount -= take;
+        });
     }
 
     public int GetAmount(int resource)

@@ -5,13 +5,18 @@ using Random = UnityEngine.Random;
 
 namespace Buildings
 {
-
     [ExecuteInEditMode]
-    public class FarmLand : MonoBehaviour, IResourceSite, IProducent
+    public class FarmLand : MonoBehaviour, IResourceSite, IProducent, IBuilding
     {
-        
         [SerializeField] private int _maxAmount;
         [SerializeField] private int _amount;
+
+        private bool _placed;
+
+        public void Place()
+        {
+            _placed = true;
+        }
 
         public int MaxAmount
         {
@@ -22,13 +27,29 @@ namespace Buildings
         public int Amount
         {
             get => _amount;
-            set { _amount = value; SetActive();}
+            set
+            {
+                _amount = value;
+                SetActive();
+            }
         }
 
         public float Depletion => 1 - ((float) Amount / MaxAmount);
-        public string ResourceName { get => "Wheat"; }
-        public int ResourceId { get => 2; }
-        public int ProductionRate { get => 2; }
+
+        public string ResourceName
+        {
+            get => "Wheat";
+        }
+
+        public int ResourceId
+        {
+            get => 2;
+        }
+
+        public int ProductionRate
+        {
+            get => 2;
+        }
 
         public GameObject[] wheat;
         private Inventory _inventory;
@@ -38,13 +59,15 @@ namespace Buildings
         {
             _inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
             _inventory.RegisterProducent(ResourceId, this);
-            for (var i = 0; i < wheat.Length; i++) {
+            for (var i = 0; i < wheat.Length; i++)
+            {
                 var rnd = Random.Range(0, wheat.Length);
                 var temp = wheat[rnd];
                 wheat[rnd] = wheat[i];
                 wheat[i] = temp;
 
-                wheat[i].transform.RotateAround(wheat[i].transform.position, wheat[i].transform.up, Random.Range(0, 360));
+                wheat[i].transform
+                    .RotateAround(wheat[i].transform.position, wheat[i].transform.up, Random.Range(0, 360));
             }
         }
 
@@ -75,6 +98,7 @@ namespace Buildings
 
         public int Produce(float rate)
         {
+            if (!_placed) return 0;
             int produced = Math.Min((int) (rate * ProductionRate), Amount);
             Amount = _amount - produced;
             return produced;

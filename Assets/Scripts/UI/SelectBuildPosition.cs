@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using Buildings;
 using DefaultNamespace.UI;
+using Resources;
+using Runtime.Resources;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -41,9 +44,14 @@ public class SelectBuildPosition : MonoBehaviour
             }
             else
             {
-                if (Input.GetMouseButtonDown(1))
+                if (Input.GetMouseButtonDown(0))
                 {
                     Destroy(template.GetComponent<Rigidbody>());
+                    var b = template.GetComponent<IBuilding>();
+                    if (b != null)
+                    {
+                        b.Place();
+                    }
                     template = null;
                     building = false;
                 }

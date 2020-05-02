@@ -20,6 +20,7 @@ namespace Runtime.Map
         public NoiseSettings terrainNoise;
 
         public Biome[] biomes;
+        public List<GameObject> generatedResources;
 
         private MeshFilter[] _meshFilters;
         private MeshRenderer[] _meshRenderers;
@@ -48,6 +49,7 @@ namespace Runtime.Map
             var numTilesPerLine = Mathf.CeilToInt(worldSize);
             var min = centralize ? -numTilesPerLine / 2f : 0;
             var map = HeightmapGenerator.GenerateHeightmap(terrainNoise, numTilesPerLine);
+            var prng = new System.Random (terrainNoise.seed);
 
             var vertices = biomes.Select(_ => new List<Vector3>()).ToArray();
             var triangles = biomes.Select(_ => new List<int>()).ToArray();
@@ -65,6 +67,46 @@ namespace Runtime.Map
                     terrainData.BiomeIndices[x, y] = biomeIndex;
                     terrainData.BiomesStep[x, y] = biomeAndStep.y;
                     terrainData.Depths[x, y] = biomeIndex > 0 ? Mathf.Lerp(biomes[biomeIndex - 1].maxTerrainHeight, biome.maxTerrainHeight, biomeAndStep.y) : 0f;
+                }
+            }
+
+            foreach (GameObject generatedResource in generatedResources)
+            {
+                DestroyImmediate(generatedResource);
+            }
+            generatedResources = new List<GameObject>();
+            
+            for (var y = 0; y < numTilesPerLine; y++)
+            {
+                for (var x = 0; x < numTilesPerLine; x++)
+                {
+                    // break;
+                    var biomeAndStep = GetBiomeInfo(map[x, y]);
+                    var biomeIndex = (int) biomeAndStep.x;
+                    var biome = biomes[biomeIndex];
+                    var height = terrainData.Depths[x, y] * tileSize;
+                    if (biome.resources.Length == 0) continue;
+                    
+                    if (x % biome.resourceTileSize != 0 || y % biome.resourceTileSize != 0)
+                    {
+                        continue;
+                    }
+
+                    
+                    var r = prng.Next(biome.resources.Length);
+                    var shouldGenerate = prng.NextDouble() > (1 - biome.resourceRarity);
+                    if (shouldGenerate)
+                    {
+                        GameObject gm = Instantiate<GameObject>(
+                            biome.resources[r], 
+                            new Vector3(min + x*tileSize, height, min + y*tileSize),
+                            Quaternion.identity
+                            );
+                        gm.transform.RotateAround(gm.transform.position, gm.transform.up, Random.Range(0, 360));
+                        generatedResources.Add(gm);
+                    }
+
+
                 }
             }
 

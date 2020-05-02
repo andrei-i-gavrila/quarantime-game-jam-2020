@@ -5,19 +5,28 @@
     }
  
     SubShader {
-        Pass {
-            Material {
-            }
-            ColorMaterial AmbientAndDiffuse
-            Lighting On
-            SetTexture [_MainTex] {
-                Combine texture * primary, texture * primary
-            }
-            SetTexture [_MainTex] {
-                constantColor [_Color]
-                Combine previous * constant DOUBLE, previous * constant
-            } 
-        }
+         Tags { "RenderType"="Opaque" }
+         LOD 200
+     
+     CGPROGRAM
+     #pragma surface surf Lambert
+     
+     sampler2D _MainTex;
+     fixed4 _Color;
+     
+     struct Input {
+         float2 uv_MainTex;
+         float4 color : COLOR;
+     };
+     
+     void surf (Input IN, inout SurfaceOutput o) {
+         fixed4 c = tex2D(_MainTex, IN.uv_MainTex) * _Color;
+         o.Albedo = c.rgb;
+         o.Albedo *= IN.color.rgb;
+         o.Alpha = c.a;
+     }
+     ENDCG
+
     }
  
     Fallback "VertexLit", 1

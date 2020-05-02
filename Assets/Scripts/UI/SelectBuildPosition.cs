@@ -35,7 +35,7 @@ public class SelectBuildPosition : MonoBehaviour
         var collisionList = template.GetComponent<CollisionList>();
         if (collisionList.CollisionCount() > 0)
         {
-            template.
+            // TODO highlight
         }
         else
         {

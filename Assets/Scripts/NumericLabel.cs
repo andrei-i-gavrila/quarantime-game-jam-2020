@@ -3,10 +3,8 @@ using UnityEngine.UI;
 
 public class NumericLabel : MonoBehaviour
 {
+    [SerializeField] private int resourceType;
 
-    [SerializeField]
-    private int resourceType;
-    
     private Inventory _inventory;
     private Text _text;
 
@@ -18,6 +16,7 @@ public class NumericLabel : MonoBehaviour
 
     void Update()
     {
-        _text.text = _inventory.GetAmount(resourceType).ToString();
+        _text.text = _inventory.GetAmount(resourceType) + "/" +
+                     _inventory.GetCapacity(resourceType);
     }
 }

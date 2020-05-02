@@ -1,22 +1,27 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using Resources;
 using UnityEngine;
-using UnityEngine.Rendering;
 using Random = UnityEngine.Random;
 
 namespace Buildings
 {
 
-    [ExecuteInEditMode]
     public class StorageUnit : MonoBehaviour, IResourceStorage
     {
         private Inventory _inventory;
 
-        public int StorageCapacity;
-        public int Stored;
+        private int _storageCapacity = 500;
+        private int _stored = 0;
+        public int StorageCapacity
+        {
+            get => _storageCapacity;
+        }
+
+        public int Stored
+        {
+            get => _stored;
+        }
+
         private int[] amounts = new int[3];
         private List<int> resourceTypes = new List<int> {0, 1, 2};
 
@@ -51,10 +56,10 @@ namespace Buildings
 
         public bool AddResource(int resource, int amount)
         {
-            int space = StorageCapacity - Stored;
+            int space = _storageCapacity - Stored;
             if (amount > space) return false;
             amounts[resource] += amount;
-            Stored += amount;
+            _stored += amount;
             return true;
         }
 
@@ -63,16 +68,16 @@ namespace Buildings
             int available = amounts[resource];
             if (available < amount) return false;
             amounts[resource] -= amount;
-            Stored -= amount;
+            _stored -= amount;
             return true;
         }
 
         private void SetState()
         {
-            var available = (float) Stored / StorageCapacity;
+            var available = (float) _stored / _storageCapacity;
             var totalBarels = barrels.Length;
             var visibleBarels = (int) (totalBarels * available);
-            if (visibleBarels == 0 && Stored > 0)
+            if (visibleBarels == 0 && _stored > 0)
             {
                 visibleBarels = 1;
             }
@@ -82,6 +87,10 @@ namespace Buildings
                 barrels[i].SetActive(i < visibleBarels);
             }
         }
-        
+
+        public int StoredResource(int resource)
+        {
+            return amounts[resource];
+        }
     }
 }

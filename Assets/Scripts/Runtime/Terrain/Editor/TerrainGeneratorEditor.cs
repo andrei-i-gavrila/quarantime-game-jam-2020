@@ -8,15 +8,15 @@ namespace Runtime.Terrain.Editor {
         TerrainGenerator terrainGen;
 
         public override void OnInspectorGUI () {
-            DrawDefaultInspector ();
-
-            if (GUILayout.Button ("Refresh")) {
-                terrainGen.Generate ();
-            }
+            // DrawDefaultInspector ();
+            //
+            // if (GUILayout.Button ("Refresh")) {
+            //     terrainGen.Generate ();
+            // }
         }
 
         void OnEnable () {
-            terrainGen = (TerrainGenerator) target;
+            // terrainGen = (TerrainGenerator) target;
         }
     }
 }

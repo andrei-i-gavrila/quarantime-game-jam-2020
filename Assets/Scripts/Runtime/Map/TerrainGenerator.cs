@@ -246,6 +246,7 @@ namespace Runtime.Map
                         _meshRenderers[biomeIndex] = holder.AddComponent<MeshRenderer>();
                         _meshFilters[biomeIndex] = holder.AddComponent<MeshFilter>();
                         _meshColliders[biomeIndex] = holder.AddComponent<MeshCollider>();
+                        holder.layer = 9;
                     }
                 }
 

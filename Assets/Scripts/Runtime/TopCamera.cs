@@ -92,7 +92,7 @@ namespace Runtime
                     }
 
                     transform.Translate(zoomTranslation, Space.Self);
-                    _camera.fieldOfView += zoomTranslation.z;
+                    // _camera.fieldOfView += zoomTranslation.z;
                 }
             }
         }

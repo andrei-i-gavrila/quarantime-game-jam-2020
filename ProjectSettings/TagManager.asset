@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - barrel
+  - WoodResource
+  - StoneResource
+  - WheatResource
+  - PeopleResource
   layers:
   - Default
   - TransparentFX

@@ -3,7 +3,7 @@
 namespace Resources
 {
     [ExecuteInEditMode]
-    public class Forest : MonoBehaviour, IResource
+    public class Forest : MonoBehaviour, IResourceSite
     {
         
         [SerializeField] private int _maxAmount;
@@ -22,6 +22,8 @@ namespace Resources
         }
 
         public float Depletion => 1 - ((float) Amount / MaxAmount);
+        public string ResourceName { get => "Wood"; }
+        public int ResourceId { get => 0; }
 
         public TreeWithStump[] trees;
 

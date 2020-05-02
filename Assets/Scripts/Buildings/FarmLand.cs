@@ -5,7 +5,7 @@ namespace Buildings
 {
 
     [ExecuteInEditMode]
-    public class FarmLand : MonoBehaviour, IResource
+    public class FarmLand : MonoBehaviour, IResourceSite
     {
         
         [SerializeField] private int _maxAmount;
@@ -24,6 +24,8 @@ namespace Buildings
         }
 
         public float Depletion => 1 - ((float) Amount / MaxAmount);
+        public string ResourceName { get => "Wheat"; }
+        public int ResourceId { get => 2; }
 
         public GameObject[] wheat;
 

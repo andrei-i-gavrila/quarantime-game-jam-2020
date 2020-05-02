@@ -9,7 +9,7 @@ namespace Resources
 {
     
     [ExecuteInEditMode]
-    public class RockGroup : MonoBehaviour, IResource
+    public class RockGroup : MonoBehaviour, IResourceSite
     {
         public int MaxAmount
         {
@@ -34,6 +34,8 @@ namespace Resources
         public int AM = 100;
 
         public float Depletion => 1 - ((float) Amount / MaxAmount);
+        public string ResourceName { get => "Stone"; }
+        public int ResourceId { get => 1; }
 
         public Rock[] rocks;
 

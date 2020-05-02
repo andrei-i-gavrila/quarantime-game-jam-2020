@@ -11,8 +11,7 @@ namespace DefaultNamespace
         {
             float rx = Random.Range(-RandomTranslateAmount, RandomTranslateAmount);
             float rz = Random.Range(-RandomTranslateAmount, RandomTranslateAmount);
-            Vector3 vector = new Vector3(rx, 0, rz);
-            gameObject.transform.Translate(vector);
+            gameObject.transform.Translate(rx, 0, rz);
             gameObject.transform.RotateAround(
                 gameObject.transform.localPosition,
                 gameObject.transform.up,

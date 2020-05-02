@@ -32,18 +32,21 @@ public class SelectBuildPosition : MonoBehaviour
             template = null;
             building = false;
         };
-        var collisionList = template.GetComponent<CollisionList>();
-        if (collisionList.CollisionCount() > 0)
+        if (template != null)
         {
-            // TODO highlight
-        }
-        else
-        {
-            if (Input.GetMouseButtonDown(1))
+            var collisionList = template.GetComponent<CollisionList>();
+            if (collisionList.CollisionCount() > 0)
             {
-                Destroy(template.GetComponent<Rigidbody>());
-                template = null;
-                building = false;
+                // TODO highlight
+            }
+            else
+            {
+                if (Input.GetMouseButtonDown(1))
+                {
+                    Destroy(template.GetComponent<Rigidbody>());
+                    template = null;
+                    building = false;
+                }
             }
         }
 
@@ -59,10 +62,6 @@ public class SelectBuildPosition : MonoBehaviour
 
                 template.transform.position = objectHit;
             }
-        }
-        else
-        {
-            // template.SetActive(false);
         }
         
     }

@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 namespace Resources
 {
     [ExecuteInEditMode]
-    public class Rock : MonoBehaviour, IResource
+    public class Rock : MonoBehaviour, IResourceSite
     {
         
         [SerializeField] private int _maxAmount;
@@ -31,7 +31,9 @@ namespace Resources
         }
 
         public float Depletion => 1 - ((float) Amount / MaxAmount);
-        
+        public string ResourceName { get => "Stone"; }
+        public int ResourceId { get => 1; }
+
         // Start is called before the first frame update
         void Start()
         {

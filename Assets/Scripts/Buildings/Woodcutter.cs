@@ -17,7 +17,7 @@ namespace Buildings
             _placed = true;
         }
 
-        public int ProductionRate { get => 50; }
+        public int ProductionRate { get => 10; }
 
         private void Start()
         {

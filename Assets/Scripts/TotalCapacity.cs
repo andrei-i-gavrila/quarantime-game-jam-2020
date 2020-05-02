@@ -1,13 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class NumericLabel : MonoBehaviour
+public class TotalCapacity : MonoBehaviour
 {
-    [SerializeField] private int resourceType;
-
     private Inventory _inventory;
     private Text _text;
-
+    
     void Start()
     {
         _inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
@@ -16,6 +14,6 @@ public class NumericLabel : MonoBehaviour
 
     void Update()
     {
-        _text.text = _inventory.GetAmount(resourceType).ToString();
+        _text.text = _inventory.GetTotalCapacity().ToString();
     }
 }

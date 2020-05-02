@@ -77,10 +77,18 @@ public class Inventory : MonoBehaviour
         if (!_init) Init();
         for (int resource = 0; resource < ResourceCount; resource++)
         {
-            var amount = _producents[resource].Aggregate(0, (sum, producent) =>
-                sum + producent.Produce(ProductionModifiers[resource]));
-            StoreResource(resource, amount);
+            bool canStoreResource = FreeResourceSpace(resource) > 0;
+            if (canStoreResource)
+            {
+                _producents[resource].ForEach(producent =>
+                   StoreResource(resource, producent.Produce(ProductionModifiers[resource])));
+            }
         }
+    }
+
+    private int FreeResourceSpace(int resource)
+    {
+        return _storages[resource].Aggregate(0, (sum, storage) => storage.StorageCapacity - storage.Stored);
     }
 
     private void StoreResource(int resource, int amount)
@@ -106,5 +114,21 @@ public class Inventory : MonoBehaviour
         }
 
         _init = true;
+    }
+
+    public int GetTotalAmount()
+    {
+        var sum = 0;
+        for (int resource = 0; resource < ResourceCount; resource++)
+        {
+            sum += GetAmount(resource);
+        }
+
+        return sum;
+    }
+
+    public int GetTotalCapacity()
+    {
+        return GetCapacity(0);
     }
 }

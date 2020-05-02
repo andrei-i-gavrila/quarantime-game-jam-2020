@@ -17,12 +17,12 @@ namespace Buildings
             _placed = true;
         }
 
-        public int ProductionRate { get => 4; }
+        public int ProductionRate { get => 50; }
 
         private void Start()
         {
             _inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
-            _inventory.RegisterProducent(1, this);
+            _inventory.RegisterProducent(0, this);
         }
 
         public int Produce(float rate)
